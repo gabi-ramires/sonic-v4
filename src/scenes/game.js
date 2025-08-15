@@ -40,19 +40,23 @@ export default function game() {
     dismissControlsAction.cancel();
   });
 
-  const scoreText = k.add([
-    k.text("PONTUAÇÃO : 0", { font: "mania", size: 72 }),
-    k.pos(20, 20),
-  ]);
   let score = 0;
   let scoreMultiplier = 0;
   let gameWon = false; // Flag para controlar se o jogo já foi vencido
-  
+  let scoreMax = 10;
+
+  const scoreText = k.add([
+    k.text(`PONTUAÇÃO : ${score}/${scoreMax}`, { font: "mania", size: 72 }),
+    k.pos(20, 20),
+  ]);
+
+
   // Verificar se o score atingiu o máximo de 50
   const checkScoreLimit = () => {
-    if (score >= 10 && !gameWon) {
+    if (score >= scoreMax && !gameWon) {
       gameWon = true; // Marca que o jogo foi vencido
       k.setData("current-score", score);
+      k.setData("current-score-max", scoreMax);
       k.go("victory", citySfx);
     }
   };
@@ -63,7 +67,7 @@ export default function game() {
     k.play("ring", { volume: 0.5 });
     k.destroy(ring);
     score++;
-    scoreText.text = `PONTUAÇÃO : ${score}`;
+    scoreText.text = `PONTUAÇÃO : ${score}/${scoreMax}`;
     sonic.ringCollectUI.text = "+1";
     k.wait(1, () => {
       sonic.ringCollectUI.text = "";
@@ -82,7 +86,7 @@ export default function game() {
       sonic.jump();
       scoreMultiplier += 1;
       score += 10 * scoreMultiplier;
-      scoreText.text = `PONTUAÇÃO : ${score}`;
+      scoreText.text = `PONTUAÇÃO : ${score}/${scoreMax}`;
       if (scoreMultiplier === 1)
         sonic.ringCollectUI.text = `+${10 * scoreMultiplier}`;
       if (scoreMultiplier > 1) sonic.ringCollectUI.text = `x${scoreMultiplier}`;

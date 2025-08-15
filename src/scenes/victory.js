@@ -3,6 +3,7 @@ import k from "../kaplayCtx";
 export default function victory(citySfx) {
   citySfx.paused = true;
   const currentScore = k.getData("current-score");
+  const scoreMax = k.getData("current-score-max");
 
   k.add([
     k.text("🎉 VOCÊ VENCEU! 🎉", { font: "mania", size: 96 }),
@@ -11,7 +12,7 @@ export default function victory(citySfx) {
   ]);
   
   k.add([
-    k.text(`PONTUAÇÃO FINAL : ${currentScore}/50`, {
+    k.text(`PONTUAÇÃO FINAL : ${currentScore}/${scoreMax}`, {
       font: "mania",
       size: 64,
     }),
@@ -28,10 +29,10 @@ export default function victory(citySfx) {
     k.pos(k.center().x + 400, k.center().y - 200),
   ]);
 
-  // Caixa do convite (lado esquerdo)
+  // Caixa do convite (lado esquerdo) - FUNDO CINZA
   const inviteBox = k.add([
     k.rect(400, 400, { radius: 4 }),
-    k.color(255, 255, 255), // Branco
+    k.color(128, 128, 128), // Cinza
     k.area(),
     k.anchor("center"),
     k.outline(6, k.Color.fromArray([255, 20, 147])), // Borda rosa
@@ -74,10 +75,10 @@ export default function victory(citySfx) {
     k.pos(0, 100),
   ]);
 
-  // Caixa dos detalhes (lado direito)
+  // Caixa dos detalhes (lado direito) - FUNDO CINZA
   const detailsBox = k.add([
     k.rect(400, 400, { radius: 4 }),
-    k.color(255, 255, 255), // Branco
+    k.color(128, 128, 128), // Cinza
     k.area(),
     k.anchor("center"),
     k.outline(6, k.Color.fromArray([255, 20, 147])), // Borda rosa

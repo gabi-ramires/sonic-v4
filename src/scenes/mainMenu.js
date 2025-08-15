@@ -22,7 +22,7 @@ export default function mainMenu() {
   ];
 
   k.add([
-    k.text("SONIC CORREDOR DE ANÉIS", { font: "mania", size: 96 }),
+    k.text("SONIC", { font: "mania", size: 96 }),
     k.anchor("center"),
     k.pos(k.center().x, 200),
   ]);

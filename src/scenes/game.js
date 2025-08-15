@@ -46,16 +46,20 @@ export default function game() {
   ]);
   let score = 0;
   let scoreMultiplier = 0;
+  let gameWon = false; // Flag para controlar se o jogo já foi vencido
   
   // Verificar se o score atingiu o máximo de 50
   const checkScoreLimit = () => {
-    if (score >= 50) {
+    if (score >= 10 && !gameWon) {
+      gameWon = true; // Marca que o jogo foi vencido
       k.setData("current-score", score);
-      k.go("gameover", citySfx);
+      k.go("victory", citySfx);
     }
   };
   
   sonic.onCollide("ring", (ring) => {
+    if (gameWon) return; // Não processar colisões se o jogo já foi vencido
+    
     k.play("ring", { volume: 0.5 });
     k.destroy(ring);
     score++;
@@ -68,6 +72,8 @@ export default function game() {
   });
   
   sonic.onCollide("enemy", (enemy) => {
+    if (gameWon) return; // Não processar colisões se o jogo já foi vencido
+    
     if (!sonic.isGrounded()) {
       k.play("destroy", { volume: 0.5 });
       k.play("hyper-ring", { volume: 0.5 });

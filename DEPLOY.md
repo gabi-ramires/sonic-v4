@@ -76,7 +76,7 @@ git push origin main
 ## 📱 URLs Importantes
 - **Local**: `http://localhost:3000`
 - **Render**: `https://seu-projeto.onrender.com`
-- **GitHub**: `https://github.com/seu-usuario/seu-repo`
+- **GitHub**: `https://github.com/gabi-ramires/sonic-v4`
 
 ## 🎯 Dicas
 - Sempre teste localmente antes do deploy

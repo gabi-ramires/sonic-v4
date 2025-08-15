@@ -2,6 +2,7 @@ import k from "./kaplayCtx";
 import disclaimer from "./scenes/disclaimer";
 import game from "./scenes/game";
 import gameover from "./scenes/gameover";
+import victory from "./scenes/victory";
 import mainMenu from "./scenes/mainMenu";
 
 k.loadSprite("chemical-bg", "graphics/chemical-bg.png");
@@ -40,5 +41,6 @@ k.scene("disclaimer", disclaimer);
 k.scene("main-menu", mainMenu);
 k.scene("game", game);
 k.scene("gameover", gameover);
+k.scene("victory", victory);
 
 k.go("disclaimer");

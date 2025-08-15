@@ -34,10 +34,10 @@ git push origin main
 3. Conecte seu repositório GitHub
 
 #### B. Configurações do Serviço
-- **Name**: `sonic-runner-game`
+- **Name**: `sonic-v4`
 - **Environment**: `Node`
 - **Region**: Escolha a mais próxima
-- **Branch**: `main`
+- **Branch**: `master`
 - **Build Command**: `npm run render-build`
 - **Start Command**: `npm start`
 - **Auto-Deploy**: ✅ Ativado

@@ -1,4 +1,5 @@
 import k from "./kaplayCtx";
+import orientation from "./scenes/orientation";
 import disclaimer from "./scenes/disclaimer";
 import game from "./scenes/game";
 import gameover from "./scenes/gameover";
@@ -37,10 +38,11 @@ k.loadSound("jump", "sounds/Jump.wav");
 k.loadSound("ring", "sounds/Ring.wav");
 k.loadSound("city", "sounds/city.mp3");
 
+k.scene("orientation", orientation);
 k.scene("disclaimer", disclaimer);
 k.scene("main-menu", mainMenu);
 k.scene("game", game);
 k.scene("gameover", gameover);
 k.scene("victory", victory);
 
-k.go("disclaimer");
+k.go("orientation");

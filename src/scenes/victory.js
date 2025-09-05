@@ -27,7 +27,7 @@ export default function victory(citySfx) {
   k.add([
     k.text(`Pontuação: ${currentScore}/${scoreMax}`, {
       font: "DMSans",
-      size: 70, // Tamanho aumentado
+      size: 80, // Tamanho aumentado
     }),
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.25), // Posição ajustada
@@ -36,28 +36,28 @@ export default function victory(citySfx) {
   
   // Texto do convite - Posicionado para aparecer antes da imagem
   k.add([
-    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 50 }), // Tamanho aumentado
+    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 70 }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.40), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 50 }), // Tamanho aumentado
+    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 70 }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.52), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 50 }), // Tamanho aumentado
+    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 70 }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.64), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 50 }), // Tamanho aumentado
+    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 70 }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.76), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco

@@ -17,9 +17,9 @@ export default function victory(citySfx) {
 
   // Título da vitória
   k.add([
-    k.text("🎉 Parabéns! Você venceu!! 🎉", { font: "DMSans", size: 80 }), // Tamanho aumentado
+    k.text("🎉 Parabéns! Você venceu!! 🎉", { font: "DMSans", size: 90 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.15), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.12), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
   
@@ -27,39 +27,39 @@ export default function victory(citySfx) {
   k.add([
     k.text(`Pontuação: ${currentScore}/${scoreMax}`, {
       font: "DMSans",
-      size: 60, // Tamanho aumentado
+      size: 70, // Tamanho aumentado
     }),
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.28), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.25), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
   
   // Texto do convite - Posicionado para aparecer antes da imagem
   k.add([
-    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 42 }), // Tamanho aumentado
+    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 50 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.42), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.40), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 42 }), // Tamanho aumentado
+    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 50 }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.52), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 42 }), // Tamanho aumentado
+    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 50 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.62), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.64), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 42 }), // Tamanho aumentado
+    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 50 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.72), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.76), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
@@ -82,13 +82,13 @@ export default function victory(citySfx) {
   k.add([
     k.text("🎈", { size: 70 }),
     k.anchor("center"), // Adicionado anchor
-    k.pos(k.width() * 0.1, k.height() * 0.15), // Posição ajustada
+    k.pos(k.width() * 0.1, k.height() * 0.1), // Posição ajustada
     k.z(100),
   ]);
   k.add([
     k.text("🎂", { size: 70 }),
     k.anchor("center"), // Adicionado anchor
-    k.pos(k.width() * 0.9, k.height() * 0.15), // Posição ajustada
+    k.pos(k.width() * 0.9, k.height() * 0.1), // Posição ajustada
     k.z(100),
   ]);
   k.add([
@@ -108,7 +108,7 @@ export default function victory(citySfx) {
     k.add([
       k.text("Pressione Espaço/Clique/Toque para Jogar Novamente", {
         font: "DMSans",
-        size: 56, // Tamanho aumentado
+        size: 60, // Tamanho aumentado
       }),
       k.anchor("center"),
       k.pos(k.center().x, k.height() - 70),

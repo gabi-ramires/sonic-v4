@@ -43,7 +43,7 @@ export default function victory(citySfx) {
   ]);
 
   k.add([
-    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 70 }), // Tamanho aumentado
+    k.text("🗓️ Data: 10 de outubro às 15h", { font: "DMSans", size: 70 }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.52), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco

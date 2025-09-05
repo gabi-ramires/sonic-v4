@@ -17,54 +17,54 @@ export default function victory(citySfx) {
 
   // Título da vitória
   k.add([
-    k.text("Parabéns! Você venceu!!", { font: "DMSans", size: 68 }),
+    k.text("🎉 Parabéns! Você venceu!! 🎉", { font: "DMSans", size: 80 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.center().y - 320), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Azul petróleo escuro
+    k.pos(k.center().x, k.height() * 0.15), // Posição ajustada
+    k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
   
   // Pontuação
   k.add([
     k.text(`Pontuação: ${currentScore}/${scoreMax}`, {
       font: "DMSans",
-      size: 44,
+      size: 60, // Tamanho aumentado
     }),
     k.anchor("center"),
-    k.pos(k.center().x, k.center().y - 250), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // SteelBlue - um azul médio
+    k.pos(k.center().x, k.height() * 0.28), // Posição ajustada
+    k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
   
   // Texto do convite - Posicionado para aparecer antes da imagem
   k.add([
-    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 32 }),
+    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 42 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.center().y - 150), // Posição mais alta
-    k.color(k.Color.fromHex("#FFFFFF")), // Dark blue-gray
+    k.pos(k.center().x, k.height() * 0.42), // Posição ajustada
+    k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 32 }),
+    k.text("🗓️ Data: 10 de outubro às 🕒 15h", { font: "DMSans", size: 42 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.center().y - 90), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Um cinza azulado suave
+    k.pos(k.center().x, k.height() * 0.52), // Posição ajustada
+    k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 32 }),
+    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 42 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.center().y - 30), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Um cinza médio
+    k.pos(k.center().x, k.height() * 0.62), // Posição ajustada
+    k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 32 }),
+    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 42 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.center().y + 30), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Dark blue-gray
+    k.pos(k.center().x, k.height() * 0.72), // Posição ajustada
+    k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   /*
-  // Imagem do convite (aparece após 5 segundos)
+  // Imagem do convite (aparece após 5 segundos) - COMENTADO NO SEU ÚLTIMO CÓDIGO
   k.wait(5, () => {
     if (k.getSprite("convite")) {
       k.add([
@@ -78,25 +78,29 @@ export default function victory(citySfx) {
   });
   */
 
-  // Emojis decorativos (mantendo os emojis, mas sem cores customizadas para eles)
+  // Emojis decorativos
   k.add([
     k.text("🎈", { size: 70 }),
-    k.pos(k.width() * 0.1, k.height() * 0.35), // Posição Y ajustada para 0.25 (mais para baixo)
+    k.anchor("center"), // Adicionado anchor
+    k.pos(k.width() * 0.1, k.height() * 0.15), // Posição ajustada
     k.z(100),
   ]);
   k.add([
     k.text("🎂", { size: 70 }),
-    k.pos(k.width() * 0.8, k.height() * 0.35), // Posição Y ajustada para 0.35 (mais para baixo)
+    k.anchor("center"), // Adicionado anchor
+    k.pos(k.width() * 0.9, k.height() * 0.15), // Posição ajustada
     k.z(100),
   ]);
   k.add([
     k.text("🎉", { size: 70 }),
-    k.pos(k.width() * 0.2, k.height() * 0.75),
+    k.anchor("center"), // Adicionado anchor
+    k.pos(k.width() * 0.2, k.height() * 0.9), // Posição ajustada
     k.z(100),
   ]);
   k.add([
     k.text("🥳", { size: 70 }),
-    k.pos(k.width() * 0.7, k.height() * 0.85),
+    k.anchor("center"), // Adicionado anchor
+    k.pos(k.width() * 0.8, k.height() * 0.9), // Posição ajustada
     k.z(100),
   ]);
 
@@ -104,11 +108,11 @@ export default function victory(citySfx) {
     k.add([
       k.text("Pressione Espaço/Clique/Toque para Jogar Novamente", {
         font: "DMSans",
-        size: 48,
+        size: 56, // Tamanho aumentado
       }),
       k.anchor("center"),
       k.pos(k.center().x, k.height() - 70),
-      k.color(k.Color.fromHex("#5C6F88")), // Um cinza azulado escuro para o botão
+      k.color(k.Color.fromHex("#FFFFFF")), // Branco
     ]);
     k.onButtonPress("jump", () => k.go("game"));
   });

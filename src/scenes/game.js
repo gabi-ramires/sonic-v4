@@ -43,7 +43,7 @@ export default function game() {
   let score = 0;
   let scoreMultiplier = 0;
   let gameWon = false; // Flag para controlar se o jogo já foi vencido
-  let scoreMax = 10;
+  let scoreMax = 50;
 
   const scoreText = k.add([
     k.text(`PONTUAÇÃO : ${score}/${scoreMax}`, { font: "mania", size: 72 }),

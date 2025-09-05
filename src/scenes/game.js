@@ -51,10 +51,11 @@ export default function game() {
   ]);
 
 
-  // Verificar se o score atingiu o máximo de 50
+  // Verificar se o score atingiu o máximo de 10
   const checkScoreLimit = () => {
     if (score >= scoreMax && !gameWon) {
       gameWon = true; // Marca que o jogo foi vencido
+      k.play("victory", { volume: 0.5 });
       k.setData("current-score", score);
       k.setData("current-score-max", scoreMax);
       k.go("victory", citySfx);

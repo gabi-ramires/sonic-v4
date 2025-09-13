@@ -49,12 +49,20 @@ export default function victory(citySfx) {
 
   // Imagem do convite (aparece após 5 segundos)
   k.wait(5, () => {
-    // Mostra a imagem do convite
     const conviteImage = document.getElementById("convite-image");
     if (conviteImage) {
-    conviteImage.style.display = "block"; // Torna a imagem visível
-
+      conviteImage.style.display = "block";
     }
+
+    // Após +5 segundos, faz o download automático
+    k.wait(5, () => {
+      const link = document.createElement("a");
+      link.href = "/images/convite-vertical.jpeg"; // caminho do arquivo
+      link.download = "convite-vertical.png"; // nome do arquivo
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
   });
 
 }

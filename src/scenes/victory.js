@@ -57,18 +57,4 @@ export default function victory(citySfx) {
     }
   });
 
-  /*
-  k.wait(1, () => { // Este wait é para o botão de jogar novamente, aparece mais rápido
-    k.add([
-      k.text("Pressione Espaço/Clique/Toque para Jogar Novamente", {
-        font: "DMSans",
-        size: 60, // Tamanho aumentado
-      }),
-      k.anchor("center"),
-      k.pos(k.center().x, k.height() - 70),
-      k.color(k.Color.fromHex("#FFFFFF")), // Branco
-    ]);
-    k.onButtonPress("jump", () => k.go("game"));
-  });
-  */
 }

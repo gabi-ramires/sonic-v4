@@ -13,7 +13,7 @@ export default function victory(citySfx) {
   ]);
 
   // Certifique-se de que a imagem esteja na pasta 'public/images/' do seu projeto
-  k.loadSprite("convite", "/public/images/convite.png");
+  k.loadSprite("convite", "/images/convite.png");
 
   // Título da vitória
   k.add([

@@ -5,12 +5,13 @@ export default function mainMenu() {
   if (!k.getData("best-score")) k.setData("best-score", 0);
   k.onButtonPress("jump", () => k.go("game"));
 
+  // Fundo e plataformas em movimento - garantir que usem sprites já carregados
   const bgPieceWidth = 1920;
   const bgPieces = [
     k.add([k.sprite("chemical-bg"), k.pos(0, 0), k.scale(2), k.opacity(0.8)]),
     k.add([
       k.sprite("chemical-bg"),
-      k.pos(1920, 0),
+      k.pos(bgPieceWidth, 0),
       k.scale(2),
       k.opacity(0.8),
     ]),
@@ -22,13 +23,13 @@ export default function mainMenu() {
   ];
 
   k.add([
-    k.text("SONIC", { font: "mania", size: 96 }),
+    k.text("SONIC", { font: "DMSans", size: 96 }), // Alterado para DMSans
     k.anchor("center"),
     k.pos(k.center().x, 200),
   ]);
 
   k.add([
-    k.text("Pressione Espaço/Clique/Toque para Jogar", { font: "mania", size: 32 }),
+    k.text("Pressione Espaço/Clique/Toque para Jogar", { font: "DMSans", size: 32 }), // Alterado para DMSans
     k.anchor("center"),
     k.pos(k.center().x, k.center().y - 200),
   ]);

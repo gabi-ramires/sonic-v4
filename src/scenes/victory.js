@@ -19,91 +19,42 @@ export default function victory(citySfx) {
   k.add([
     k.text("🎉 Parabéns! Você venceu!! 🎉", { font: "DMSans", size: 90 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.12), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.25), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
   
   // Pontuação
   k.add([
-    k.text(`Pontuação: ${currentScore}/${scoreMax}`, {
+    k.text(`Pontos: ${currentScore}/${scoreMax}`, {
       font: "DMSans",
-      size: 80, // Tamanho aumentado
+      size: 70, // Tamanho aumentado
     }),
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.25), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Branco
-  ]);
-  
-  // Texto do convite - Posicionado para aparecer antes da imagem
-  k.add([
-    k.text("Você está sendo convidado para meu aniversário de 6 anos!", { font: "DMSans", size: 70 }), // Tamanho aumentado
-    k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.40), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.45), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
   k.add([
-    k.text("🗓️ Data: 10 de outubro às 15h", { font: "DMSans", size: 70 }), // Tamanho aumentado
+    k.text("Aguarde para receber um convite especial", { font: "DMSans", size: 50 }), // Tamanho aumentado
     k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.52), // Posição ajustada
+    k.pos(k.center().x, k.height() * 0.60), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
 
-  k.add([
-    k.text("📍Local: Rua da paz, 10. Porto Alegre", { font: "DMSans", size: 70 }), // Tamanho aumentado
-    k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.64), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Branco
-  ]);
-
-  k.add([
-    k.text("Aguardo sua confirmação! 🙏", { font: "DMSans", size: 70 }), // Tamanho aumentado
-    k.anchor("center"),
-    k.pos(k.center().x, k.height() * 0.76), // Posição ajustada
-    k.color(k.Color.fromHex("#FFFFFF")), // Branco
-  ]);
-
-  /*
-  // Imagem do convite (aparece após 5 segundos) - COMENTADO NO SEU ÚLTIMO CÓDIGO
+  // Imagem do convite (aparece após 5 segundos)
   k.wait(5, () => {
     if (k.getSprite("convite")) {
       k.add([
         k.sprite("convite"),
         k.anchor("center"),
-        k.scale(0.8), // Ajuste o tamanho conforme necessário
-        k.pos(k.center().x, k.center().y + 220), // Posição centralizada Y ajustada para a imagem
+        k.scale(1.2), // Ajuste o tamanho conforme necessário
+        k.pos(k.center().x, k.center().y), // Posição centralizada Y ajustada para a imagem
         k.z(50), // Garante que a imagem fique acima do fundo
       ]);
     }
   });
-  */
 
-  // Emojis decorativos
-  k.add([
-    k.text("🎈", { size: 70 }),
-    k.anchor("center"), // Adicionado anchor
-    k.pos(k.width() * 0.1, k.height() * 0.1), // Posição ajustada
-    k.z(100),
-  ]);
-  k.add([
-    k.text("🎂", { size: 70 }),
-    k.anchor("center"), // Adicionado anchor
-    k.pos(k.width() * 0.9, k.height() * 0.1), // Posição ajustada
-    k.z(100),
-  ]);
-  k.add([
-    k.text("🎉", { size: 70 }),
-    k.anchor("center"), // Adicionado anchor
-    k.pos(k.width() * 0.2, k.height() * 0.9), // Posição ajustada
-    k.z(100),
-  ]);
-  k.add([
-    k.text("🥳", { size: 70 }),
-    k.anchor("center"), // Adicionado anchor
-    k.pos(k.width() * 0.8, k.height() * 0.9), // Posição ajustada
-    k.z(100),
-  ]);
-
+  /*
   k.wait(1, () => { // Este wait é para o botão de jogar novamente, aparece mais rápido
     k.add([
       k.text("Pressione Espaço/Clique/Toque para Jogar Novamente", {
@@ -116,4 +67,5 @@ export default function victory(citySfx) {
     ]);
     k.onButtonPress("jump", () => k.go("game"));
   });
+  */
 } 

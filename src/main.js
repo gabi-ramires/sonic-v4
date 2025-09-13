@@ -31,7 +31,7 @@ k.loadSprite("motobug", "graphics/motobug.png", {
   },
 });
 k.loadFont("mania", "fonts/mania.ttf");
-k.loadFont("DMSans", "fonts/DMSans-Regular.ttf"); // Carrega a fonte DM Sans
+k.loadFont("DMSans", "/fonts/DMSans-Regular.ttf"); // Carrega a fonte DM Sans
 k.loadSound("destroy", "sounds/Destroy.wav");
 k.loadSound("hurt", "sounds/Hurt.wav");
 k.loadSound("hyper-ring", "sounds/HyperRing.wav");

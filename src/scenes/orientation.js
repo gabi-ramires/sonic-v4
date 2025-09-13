@@ -1,22 +1,22 @@
 import k from "../kaplayCtx";
 
 export default function orientation() {
-  // Flag para evitar múltiplas transições de cena
   let hasTransitioned = false;
 
-  // Verifica se é um dispositivo móvel
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  // --- NOVO AJUSTE DE LÓGICA ---
-  // Verifica se já está em modo paisagem no início
-  const initialIsLandscape = window.innerWidth > window.innerHeight;
-
-  // Se não for mobile OU se for mobile E já estiver em paisagem, vai direto para o disclaimer
-  if (!isMobile || (isMobile && initialIsLandscape)) {
+  // Se não for mobile, vai direto para o disclaimer
+  if (!isMobile) {
     k.go("disclaimer");
     return;
   }
-  // --- FIM DO NOVO AJUSTE ---
+
+  // Se for mobile e já estiver em modo paisagem, vai direto para o disclaimer
+  const initialIsLandscape = window.innerWidth > window.innerHeight;
+  if (isMobile && initialIsLandscape) {
+    k.go("disclaimer");
+    return;
+  }
 
   // Adiciona fundo escuro
   k.add([
@@ -25,32 +25,22 @@ export default function orientation() {
     k.fixed(),
   ]);
 
-  // Variáveis para guardar as referências dos elementos que podem ser destruídos
-  let phoneIcon, mainTextObj; // Removido secondaryTextObj, skipBtn, skipTextObj
-  
-  // Não há mais elementos de tela cheia ou de botão pular para referenciar
-
-  // --- Criação dos elementos de Orientação (visíveis APENAS em modo retrato, pois já filtramos acima) ---
-  // A variável currentY gerencia o posicionamento vertical dos elementos
-  let currentY = k.height() * 0.25; // Ajustando para um pouco mais baixo
-
-  phoneIcon = k.add([
+  // Cria os elementos de orientação (visíveis apenas em modo retrato)
+  const phoneIcon = k.add([
     k.text("📱", { size: 200 }), // Ícone do celular
     k.anchor("center"),
-    k.pos(k.width() / 2, currentY),
+    k.pos(k.width() / 2, k.height() * 0.35), // Posição ajustada
     k.fixed(),
     k.rotate(0),
   ]);
-  currentY += 200 + 60; // Altura do ícone + espaçamento
 
-  // Animação de rotação do ícone
   phoneIcon.onUpdate(() => {
     phoneIcon.angle += 0.02;
   });
 
-  mainTextObj = k.add([
+  const mainTextObj = k.add([
     k.text("VIRE O CELULAR", {
-      font: "mania",
+      font: "mania", // Mantemos "mania" aqui, ou trocamos para "DMSans" se já carregada
       size: 140,
       color: k.rgb(255, 255, 0),
       outline: { width: 6, color: k.rgb(0, 0, 0) },
@@ -58,26 +48,18 @@ export default function orientation() {
       align: "center",
     }),
     k.anchor("center"),
-    k.pos(k.width() / 2, currentY),
+    k.pos(k.width() / 2, k.height() * 0.7), // Posição ajustada
     k.fixed(),
   ]);
-  // Não precisamos de currentY para mais nada abaixo, pois o botão pular foi removido.
 
-  // --- Função para esconder elementos de orientação ---
-  let orientationElementsHidden = false;
-  const hideOrientationElements = () => {
-    if (orientationElementsHidden) return; // Já escondido
-
-    // Destroi os elementos de orientação
+  // Função para esconder elementos e transicionar
+  const hideOrientationElementsAndGo = () => {
+    if (hasTransitioned) return;
+    hasTransitioned = true;
     phoneIcon.destroy();
     mainTextObj.destroy();
-    // secondaryTextObj, skipBtn, skipTextObj foram removidos
-
-    orientationElementsHidden = true;
+    k.go("disclaimer");
   };
-
-  // --- Funções e Eventos ---
-  // Botão pular e eventos de tela cheia foram removidos.
 
   // Verifica periodicamente se a orientação está correta
   const checkOrientation = () => {
@@ -86,14 +68,13 @@ export default function orientation() {
     const currentIsLandscape = window.innerWidth > window.innerHeight;
 
     // Se for mobile e a orientação mudar para paisagem, esconde os elementos e avança
-    if (isMobile && currentIsLandscape && !orientationElementsHidden) {
-      hideOrientationElements();
-      if (!hasTransitioned) { // Garante que a transição ocorra apenas uma vez
-        hasTransitioned = true;
-        k.go("disclaimer");
-      }
+    if (isMobile && currentIsLandscape) {
+      hideOrientationElementsAndGo();
     }
   };
+
+  // Checa logo ao entrar
+  checkOrientation();
 
   // Verifica a cada 500ms
   const interval = setInterval(checkOrientation, 500);
@@ -109,4 +90,4 @@ export default function orientation() {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(checkOrientation, 300);
   });
-} 
+}

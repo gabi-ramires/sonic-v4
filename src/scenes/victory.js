@@ -17,12 +17,15 @@ export default function victory(citySfx) {
 
   // Título da vitória
   k.add([
-    k.text("🎉 Parabéns! Você venceu!! 🎉", { font: "DMSans", size: 90 }), // Tamanho aumentado
+    k.text("🎉 Parabéns! Você venceu!! 🎉", {
+      font: "DMSans",
+      size: 90
+    }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.25), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
   ]);
-  
+
   // Pontuação
   k.add([
     k.text(`Pontos: ${currentScore}/${scoreMax}`, {
@@ -35,7 +38,10 @@ export default function victory(citySfx) {
   ]);
 
   k.add([
-    k.text("Aguarde para receber um convite especial", { font: "DMSans", size: 50 }), // Tamanho aumentado
+    k.text("Aguarde para receber um convite especial", {
+      font: "DMSans",
+      size: 50
+    }), // Tamanho aumentado
     k.anchor("center"),
     k.pos(k.center().x, k.height() * 0.60), // Posição ajustada
     k.color(k.Color.fromHex("#FFFFFF")), // Branco
@@ -43,14 +49,11 @@ export default function victory(citySfx) {
 
   // Imagem do convite (aparece após 5 segundos)
   k.wait(5, () => {
-    if (k.getSprite("convite")) {
-      k.add([
-        k.sprite("convite"),
-        k.anchor("center"),
-        k.scale(1), // Ajuste o tamanho conforme necessário
-        k.pos(k.center().x, k.center().y), // Posição centralizada Y ajustada para a imagem
-        k.z(50), // Garante que a imagem fique acima do fundo
-      ]);
+    // Mostra a imagem do convite
+    const conviteImage = document.getElementById("convite-image");
+    if (conviteImage) {
+    conviteImage.style.display = "block"; // Torna a imagem visível
+
     }
   });
 
@@ -68,4 +71,4 @@ export default function victory(citySfx) {
     k.onButtonPress("jump", () => k.go("game"));
   });
   */
-} 
+}

@@ -47,7 +47,7 @@ export default function victory(citySfx) {
       k.add([
         k.sprite("convite"),
         k.anchor("center"),
-        k.scale(1.2), // Ajuste o tamanho conforme necessário
+        k.scale(1.0), // Ajuste o tamanho conforme necessário
         k.pos(k.center().x, k.center().y), // Posição centralizada Y ajustada para a imagem
         k.z(50), // Garante que a imagem fique acima do fundo
       ]);
